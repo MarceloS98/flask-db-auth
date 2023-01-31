@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      action="/login"
+      method="POST"
+      class="flex max-w-lg mx-auto mt-10 flex-col justify-start w-full p-5 bg-white"
+    >
+      <h1 class="text-xl font-bold mb-3">Logueate</h1>
+      <!-- hidden_tag() Crea el JWT -->
+      <!-- Para pasarle clases de tailwind, podemos pasarle como parametro class='bg-red-200' -->
+      <div class="flex flex-col gap-y-2 mb-3">
+        {{ form.hidden_tag() }} {{ form.email(placeholder="Email", class="py-2
+        px-4 outline outline-gray-200") }} {{
+        form.password(placeholder="Password", class="py-2 px-4 outline
+        outline-gray-200 rounded-md") }}
+      </div>
+      {{ form.submit(class="bg-gray-200 self-start px-3 py-2 rounded-md ") }}
+    </form>
+    <!-- <form method="POST">
+        {{ form.hidden_tag() }} {{ form.email() }} {{ form.password() }} {{
+        form.submit() }}
+      </form> -->
+  </body>
+</html>
